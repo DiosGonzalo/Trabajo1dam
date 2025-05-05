@@ -1,0 +1,33 @@
+package com.salesianostriana.dam.DiosFiestasGonzaloDemo;
+import java.time.LocalDate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class MainController {
+/*Esta clase va a utilizar un servicio que nos va a hacer la labor de proveernos de datos pero solo proque todavia no sabemos conectarnosa 
+ * una base de datros
+ * No hacer esto en el trabajo
+ * Lo de abajo es para inyectar la clase servicios para poder usarla
+ */
+	@Autowired
+	private DummyService service;
+	@GetMapping ({"/","Welcome"})
+	public String welcome(@RequestParam(name="nombre", required=false, defaultValue="mundo")    Model model,String nombre) {
+		model.addAttribute("nombre",nombre);
+		model.addAttribute("fecha", LocalDate.now());
+		model.addAttribute("producto", service.getProducto());
+		
+		return "primerArchivo";
+	
+	}
+	
+	@GetMapping ("lista")
+	public String lista(Model model) {
+		model.addAttribute(service.lista());
+		return "index";
+	}
+}

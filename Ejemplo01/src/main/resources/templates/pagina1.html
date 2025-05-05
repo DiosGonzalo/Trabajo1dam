@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Guías - Easy Summits</title>
+    <!-- Bootstrap Slate Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/slate/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4)), 
+                        url(/Imagenes/Nepal.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .guide-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border: none;
+        }
+        
+        .guide-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .guide-img {
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .guide-card:hover .guide-img {
+            transform: scale(1.05);
+        }
+        
+        .badge-experience {
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border-radius: 20px;
+        }
+        
+        .mountain-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .mountain-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .mountain-list li:before {
+            content: "▲";
+            color: #5bc0de;
+            position: absolute;
+            left: 0;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(to right, #5bc0de, transparent);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .modal-content {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-compass me-2"></i>Easy Summits
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio"><i class="bi bi-house-door me-1"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#guias"><i class="bi bi-person-badge me-1"></i> Nuestros Guías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Testimonios.html"><i class="bi bi-chat-square-quote me-1"></i> Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#expediciones"><i class="bi bi-map me-1"></i> Expediciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeria"><i class="bi bi-images me-1"></i> Galería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tabla"><i class="bi bi-table me-1"></i> Comparativa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio-sesion"><i class="bi bi-box-arrow-in-right me-1"></i> Inicio de Sesión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto"><i class="bi bi-envelope me-1"></i> Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-dark text-white py-5 mt-5">
+        <div class="container py-5 text-center">
+            <h1 class="display-4 fw-bold">Nuestros Guías Profesionales</h1>
+            <p class="lead">Los mejores expertos para acompañarte en tus ascensos</p>
+        </div>
+    </header>
+
+    <section id="guias" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Conoce a nuestro equipo de expertos</h2>
+                <p class="lead text-muted">Guías certificados con amplia experiencia en montañismo</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <!-- Guía 1 -->
+                <div class="col-lg-5 col-md-6 mb-4">
+                    <div class="card guide-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="/Imagenes/hylary.jpg" class="img-fluid guide-img" alt="Carlos Andrade">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h3 class="card-title">Edmun Hilary</h3>
+                                    <p class="card-text text-muted"><i class="bi bi-award"></i> Guía UIAGM con 15 años de experiencia</p>
+                                    <div class="mb-3">
+                                        <span class="badge bg-primary badge-experience">8000m</span>
+                                        <span class="badge bg-success badge-experience">7000m</span>
+                                        <span class="badge bg-warning badge-experience">Alpinismo técnico</span>
+                                    </div>
+                                    
+                                    <p class="card-text">Especialista en expediciones al Himalaya. Habla español, inglés y nepalí.</p>
+                                    
+                                    <h5 class="mt-3"><i class="bi bi-mountain"></i> Montañas destacadas:</h5>
+                                    <ul class="mountain-list">
+                                        <li>Everest (3 ascensos)</li>
+                                        <li>K2 (Cara Norte)</li>
+                                        <li>Annapurna I</li>
+                                        <li>Aconcagua (20+ ascensos)</li>
+                                        <li>Matterhorn (Cara Norte)</li>
+                                    </ul>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Guía 2 -->
+                <div class="col-lg-5 col-md-6 mb-4">
+                    <div class="card guide-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="/Imagenes/istockphoto-524303999-612x612.jpg" class="img-fluid guide-img" alt="Ana Ríos">
+                            </div>
+                            <div class="col-md-8"> 
+                                <div class="card-body">
+                                    <h3 class="card-title">Paco Salas</h3>
+                                    <p class="card-text text-muted"><i class="bi bi-award"></i> Guía IFMGA con 12 años de experiencia</p>
+                                    <div class="mb-3">
+                                        <span class="badge bg-primary badge-experience">8000m</span>
+                                        <span class="badge bg-success badge-experience">7000m</span>
+                                        <span class="badge bg-info badge-experience">Expediciones</span>
+                                    </div>
+                                    
+                                    <p class="card-text">Especialista en logística de expediciones y grupos de mujeres en montaña.</p>
+                                    
+                                    <h5 class="mt-3"><i class="bi bi-mountain"></i> Montañas destacadas:</h5>
+                                    <ul class="mountain-list">
+                                        <li>Cho Oyu (2 ascensos)</li>
+                                        <li>Manaslu (Ruta normal y variante)</li>
+                                        <li>Denali (West Buttress)</li>
+                                        <li>Huayna Potosí (50+ ascensos)</li>
+                                        <li>Mont Blanc (Varias rutas)</li>
+                                    </ul>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Guía 3 -->
+                <div class="col-lg-5 col-md-6 mb-4">
+                    <div class="card guide-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="/Imagenes/sherpa 2.jpg" class="img-fluid guide-img" alt="Pablo Mendoza">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h3 class="card-title">Pablo Motos</h3>
+                                    <p class="card-text text-muted"><i class="bi bi-award"></i> Guía UIAGM con 18 años de experiencia</p>
+                                    <div class="mb-3">
+                                        <span class="badge bg-primary badge-experience">8000m</span>
+                                        <span class="badge bg-danger badge-experience">Invierno</span>
+                                        <span class="badge bg-dark badge-experience">Rescate</span>
+                                    </div>
+                                    
+                                    <p class="card-text">Experto en ascensos invernales y rescate en alta montaña. Instructor de cursos avanzados.</p>
+                                    
+                                    <h5 class="mt-3"><i class="bi bi-mountain"></i> Montañas destacadas:</h5>
+                                    <ul class="mountain-list">
+                                        <li>Everest (Invierno 2021)</li>
+                                        <li>Lhotse (Ruta normal y cara sur)</li>
+                                        <li>Gasherbrum II (Invierno)</li>
+                                        <li>Alpamayo (Cara sur)</li>
+                                        <li>Eiger (Cara norte)</li>
+                                    </ul>
+                                    
+                                    <div class="d-grid mt-4">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Guía 4 -->
+                <div class="col-lg-5 col-md-6 mb-4">
+                    <div class="card guide-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="/Imagenes/Sherpa 3.jpg" class="img-fluid guide-img" alt="Lucía Fernández">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h3 class="card-title">Manolo Gafotas</h3>
+                                    <p class="card-text text-muted"><i class="bi bi-award"></i> Guía IFMGA con 10 años de experiencia</p>
+                                    <div class="mb-3">
+                                        <span class="badge bg-success badge-experience">7000m</span>
+                                        <span class="badge bg-warning badge-experience">Alpinismo</span>
+                                        <span class="badge bg-info badge-experience">Iniciación</span>
+                                    </div>
+                                    
+                                    <p class="card-text">Especialista en expediciones a 7000m y formación de nuevos alpinistas.</p>
+                                    
+                                    <h5 class="mt-3"><i class="bi bi-mountain"></i> Montañas destacadas:</h5>
+                                    <ul class="mountain-list">
+                                        <li>Pik Lenin (3 ascensos)</li>
+                                        <li>Island Peak (15+ ascensos)</li>
+                                        <li>Mera Peak</li>
+                                        <li>Tocllaraju</li>
+                                        <li>Fitz Roy (Variante Supercanaleta)</li>
+                                    </ul>
+                                    
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Easy Summits</h5>
+                    <p>Guiando tus sueños a las cumbres más altas desde 2005.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p><i class="bi bi-envelope me-2"></i> info@easysummits.com</p>
+                    <p><i class="bi bi-phone me-2"></i> +1 234 567 890</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Síguenos</h5>
+                    <a href="#" class="text-white me-3 fs-4"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-3 fs-4"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white me-3 fs-4"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Easy Summits. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

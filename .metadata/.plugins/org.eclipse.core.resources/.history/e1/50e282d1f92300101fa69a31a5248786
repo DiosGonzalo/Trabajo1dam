@@ -1,0 +1,39 @@
+package com.salesianostriana.dam.DiosFiestasGonzaloDemo.controller;
+
+import com.example.demo.model.Persona;
+import com.example.demo.service.PersonaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class Controlador {
+
+    @Autowired
+    private PersonaService personaService;
+
+    // Mostrar el formulario
+    @GetMapping("/formulario")
+    public String mostrarFormulario(Model model) {
+        model.addAttribute("persona", new Persona());
+        return "formulario";
+    }
+
+    // Procesar el formulario
+    @PostMapping("/formulario")
+    public String procesarFormulario(@ModelAttribute Persona persona) {
+        personaService.agregarPersona(persona);
+        return "redirect:/lista";
+    }
+
+    // Mostrar la lista de personas
+    @GetMapping("/lista")
+    public String mostrarLista(Model model) {
+        model.addAttribute("personas", personaService.obtenerPersonas());
+        return "lista";
+    }
+}
+

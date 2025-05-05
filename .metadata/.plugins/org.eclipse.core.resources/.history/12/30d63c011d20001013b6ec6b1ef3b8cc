@@ -1,0 +1,21 @@
+package com.salesianostriana.dam.DiosFiestasGonzaloDemo;
+
+import org.springframework.stereotype.Service;
+
+
+
+/*
+ * En los service la logica de negocio
+ * Lo que hagamos aqui no se hace aqui, es para simular que hemos ido a la base de datos etc
+ * Para inyectar lo normal es con los atributos
+ */
+@Service
+public class DummyService {
+
+	
+	public Producto getProducto() {
+		return new Producto("Camiseta","!Wena de verdad!",15.0f);
+	}
+	
+	
+}

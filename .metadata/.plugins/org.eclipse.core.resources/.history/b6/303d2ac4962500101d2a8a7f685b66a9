@@ -1,0 +1,49 @@
+package com.salesianostriana.dam.DiosFiestasGonzaloDemo.modelos;
+
+import java.time.LocalDate;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data @NoArgsConstructor @AllArgsConstructor
+public class Expedicion {
+    @Id @GeneratedValue
+    private Long id;
+    
+    private String nombre;
+    private double precio;
+    private int capacidad;
+    private int categoria; // Asegúrate que existe este campo
+    private String imagenUrl; // Asegúrate que existe este campo
+    
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate fechaExpedicion;
+    
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate fechaLimite;
+
+    // Constructor completo
+    public Expedicion(String nombre, double precio, int capacidad, int categoria, 
+                     LocalDate fechaExpedicion, LocalDate fechaLimite, String imagenUrl) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.capacidad = capacidad;
+        this.categoria = categoria;
+        this.fechaExpedicion = fechaExpedicion;
+        this.fechaLimite = fechaLimite;
+        this.imagenUrl = imagenUrl;
+    }
+}
+
+
+	
+	
+	
+}

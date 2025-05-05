@@ -1,0 +1,8 @@
+spring.application.name=GonzaloDiosFiestasDemo
+spring.datasource.username=sa
+spring.datasource.password=
+
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.h2.console.enabled=true
+spring.jpa.show-sql=true
+

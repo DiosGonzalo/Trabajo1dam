@@ -1,0 +1,46 @@
+package com.salesianostriana.dam.DiosFiestasGonzaloDemo.servicios;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.salesianostriana.dam.DiosFiestasGonzaloDemo.modelos.Expedicion;
+import com.salesianostriana.dam.DiosFiestasGonzaloDemo.repositorio.ExpedicionRepositorio;
+
+import jakarta.annotation.PostConstruct;
+
+@Service
+public class ExpedicionServicio {
+
+    private final ExpedicionRepositorio repositorio;
+
+    public ExpedicionServicio(ExpedicionRepositorio repositorio) {
+        this.repositorio = repositorio;
+    }
+
+    
+    
+    public void agregar(Expedicion e) {
+        repositorio.save(e);
+    }
+        
+    public List<Expedicion> getLista() {
+        return repositorio.findAll();
+    }
+    
+    // Métodos adicionales que podrías necesitar:
+    public Expedicion findById(Long id) {
+        return repositorio.findById(id).orElse(null);
+    }
+    
+    public void editar(Expedicion e) {
+        repositorio.save(e);
+    }
+    
+    public void eliminar(Long id) {
+        repositorio.deleteById(id);
+    }
+    
+    
+}

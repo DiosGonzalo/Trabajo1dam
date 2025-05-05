@@ -1,0 +1,33 @@
+package com.salesianostriana.dam.DiosFiestasGonzaloDemo.servicios;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.salesianostriana.dam.DiosFiestasGonzaloDemo.modelos.Expedicion;
+import com.salesianostriana.dam.DiosFiestasGonzaloDemo.repositorio.ExpedicionRepositorio;
+
+
+@Service
+public class ExpedicionServicio {
+
+    private final ExpedicionRepositorio repositorio;
+
+    public ExpedicionServicio(ExpedicionRepositorio repositorio) {
+        this.repositorio = repositorio;
+    }
+
+    
+    
+    public void agregar(Expedicion e) {
+        repositorio.save(e);
+    }
+        
+    public List<Expedicion> getLista() {
+        return repositorio.findAll();
+    }
+    
+   
+    
+    
+}

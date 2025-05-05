@@ -49,6 +49,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\dios.figon24_triana\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE\ManyToOne"/>
 			<item value="C:\Users\dios.figon24_triana\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE\UD8E07Fechas"/>
 			<item value="C:\Users\dios.figon24_triana\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE\GonzaloDiosFiestasDemo-1"/>
 		</list>

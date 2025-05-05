@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
@@ -29,7 +30,8 @@ public class Expedicion {
     private int capacidad;
     private int categoria; 
     private String imagenUrl;
-    @OneToMany 
+    @OneToMany  //Lo primero es para con lo que se relaciona, lo segundo es para como se trae las cosas
+    
     
     private List<Usuario> usuarios;
     

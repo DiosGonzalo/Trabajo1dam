@@ -45,9 +45,8 @@ public class ExpedicionController {
 	   return "expediciones";
    }
    
-   @GetMapping("/expedicion/editar/")
+   @GetMapping("/expedicion/editar/{id}")
    public String borrarExpedicion(Model model, Long id) {
-	   servicio.findById(id);
 	   return "editar";
 	   }
 }
